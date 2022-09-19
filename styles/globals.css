@@ -2,10 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* 기본 베이스 태그 css 커스텀 [예제]*/
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+
+/* 클래스 css 커스텀 [예제]*/
+@layer components {
+  .btn-blue {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  }
+}
+
+/*[예제]*/
+@layer utilities {
+  .filter-none {
+    filter: none;
+  }
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+}
+
+
 html,
 body {
   margin: auto;
-  width: 1059px;
+  /* width: 1059px; */
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
