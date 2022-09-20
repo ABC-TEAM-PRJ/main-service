@@ -1,7 +1,5 @@
-import type { NextPage } from 'next'
-import Link from 'next/link'
 
-const Nav: NextPage = () => {
+const Header = () => {
   return (
     <header className="sticky top-0 z-40 lg:z-50 w-full max-w-8xl mx-auto bg-white flex-none flex h-16 lg:h-20 shadow-lg justify-between">
         {/* <div className="flex-none flex p-2 items-center border-b border-gray-200 lg:border-b-0 lg:hidden ">
@@ -26,4 +24,4 @@ const Nav: NextPage = () => {
   )
 }
 
-export default Nav
+export default Header
