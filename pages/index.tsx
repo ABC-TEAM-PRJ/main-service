@@ -1,11 +1,7 @@
 import type { NextPage } from 'next'
-import Header from '../components/common/Header'
-import Footer from '../components/common/Footer'
-
-const Home: NextPage = () => {
+import Layout from '../components/Layout'
+export default function Index() {
   return (
-    <>
-      <Header/>
       <main>
         <div className="container mx-auto max-w-7xl">
               <div className="desktop:flex">
@@ -39,13 +35,16 @@ const Home: NextPage = () => {
               </div>
           </div>
       </main>
-      <Footer/>
-    </>
+    )
+  }
+
+Index.getLayout = function getLayout(Page: NextPage) {
+  return (
+    <Layout>
+      {Page}
+    </Layout>
   )
 }
-
-export default Home
-
 
 function Section () {
 
