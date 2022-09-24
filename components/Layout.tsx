@@ -7,10 +7,10 @@ import Footer from './common/Footer'
     return (
         <>         
             <Head>
-                <title>JipJung</title>
+                <title>집중</title>
             </Head>   
             <Header/>
-            <main>{children}</main>
+            <main className='min-h-screen'>{children}</main>
             <Footer/>
         </>
     )

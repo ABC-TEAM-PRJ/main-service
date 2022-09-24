@@ -7,7 +7,7 @@ const Header = () => {
           </div> */}
           <div className="w-[1280px] flex justify-between">
             <a className="w-[300px] m-5">
-                <span className="font-bold text-xl w-auto ">집과 중개인을 위한! ZipZung!</span>
+                <span className="font-bold text-xl w-auto ">집중</span>
             </a>
             <div className="flex justify-between items-center">
   
