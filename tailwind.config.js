@@ -22,9 +22,11 @@ module.exports = {
         'desktop': '1280px',
         // => @media (min-width: 1280px) { ... }
       },
-      'main-color':'#32A852',
-      'light-black':'#555555',
-      'light-grey':'#888888',
+      colors: {
+        'main-color':'#32A852',
+        'light-black':'#555555',
+        'light-grey':'#888888',
+      }
     }
   },
   corePlugins: {
