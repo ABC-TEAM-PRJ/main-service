@@ -1,4 +1,5 @@
 import Script from 'next/script';
+import Header from '../components/common/Header'
 import { useEffect } from "react";
 
 interface MapProps {
@@ -25,7 +26,7 @@ function Map({ latitude, longitude }: MapProps) {
       window.kakao.maps.load(() => {
         const container = document.getElementById("map");
         const options = {
-          center: new window.kakao.maps.LatLng(latitude, longitude),
+          center: new window.kakao.maps.LatLng(33.450701, 126.570667),
         };
         const map = new window.kakao.maps.Map(container, options);
         const markerPosition = new window.kakao.maps.LatLng(latitude, longitude);
@@ -41,10 +42,12 @@ function Map({ latitude, longitude }: MapProps) {
   }, [latitude, longitude]);
 
   return (
-    <>
+    <>          
+    <Header/>
     <Script 
         strategy='beforeInteractive' 
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=e4109694aa04710cb709f1d88e81eaf6&autoload=false`}
+        // src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=e4109694aa04710cb709f1d88e81eaf6&autoload=false`}
+        src={ `//dapi.kakao.com/v2/maps/sdk.js?appkey=$e4109694aa04710cb709f1d88e81eaf6&autoload=false&libraries=services`}
       />
     <div style={{aspectRatio: '320/220'}} id="map" />
     </>
