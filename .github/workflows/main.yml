@@ -7,7 +7,7 @@ on:
 
 # 환경설정
 env:
-  DOCKER_IMAGE: ghcr.io/${{ repository_owner }}/main-service-docker
+  DOCKER_IMAGE: ghcr.io/${{ github.repository_owner }}/main-service-docker
   VERSION: ${{ github.sha }}
   NAME: go_cicd
 
