@@ -10,7 +10,6 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/main-service
   VERSION: ${{ github.sha }}
   NAME: go_cicd
-  GHCR_TOKEN: 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
 
 jobs:
   # 빌드 Job
@@ -37,7 +36,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ env.GHCR_TOKEN }}
+          password: ${{ secrets.GHCR_TOKEN }}
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
@@ -56,7 +55,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ env.GHCR_TOKEN }}
+          password: ${{ secrets.GHCR_TOKEN }}
       # 3000 -> 80 포트로 수행하도록 지정
       - name: Docker run
         run: |
