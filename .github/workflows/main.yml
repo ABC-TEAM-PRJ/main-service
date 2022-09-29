@@ -7,7 +7,7 @@ on:
 
 # 환경설정
 env:
-  DOCKER_IMAGE: ghcr.io/${{ github.repository_owner }}/main-service-docker
+  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/main-service-docker
   VERSION: ${{ github.sha }}
   NAME: go_cicd
 
@@ -36,7 +36,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          password: ${{ secrets.MAIN_TOKEN }}
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
