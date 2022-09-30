@@ -30,7 +30,7 @@ EXPOSE 3000
 
 ## CMD ["yarn", "start"] : yarn start 명령을 실행합니다.
 
-CMD [ "yarn", "start"]
+CMD [ "yarn", "dev"]
 
 ## 도커파일 빌드 main-service-docker / 버전 0.0.1 / . 현재폴더의 모든파일을
 
