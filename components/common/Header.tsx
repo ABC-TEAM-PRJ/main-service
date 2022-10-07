@@ -1,3 +1,4 @@
+import Link from 'next/link'
 
 const Header = () => {
     return (
@@ -13,11 +14,11 @@ const Header = () => {
   
               <nav className="hidden laptop:block">
                 <ul className="inline-flex">
-                  <li className='m-10 w-15 list-none'>매물</li>
-                  <li className='m-10 w-15 list-none'>시세</li>
-                  <li className='m-10 w-15 list-none'>커뮤니티</li>
-                  <li className='m-10 w-15 list-none'>이벤트</li>
-                  <li className='m-10 w-15 list-none'>로그인</li>
+                    <li className='m-10 w-15 list-none'><Link href="/map">매물</Link></li>
+                    <li className='m-10 w-15 list-none'><Link href="/post">매물등록</Link></li>
+                  {/*<li className='m-10 w-15 list-none'>커뮤니티</li>*/}
+                  {/*<li className='m-10 w-15 list-none'>이벤트</li>*/}
+                    <li className='m-10 w-15 list-none'><Link href="/login">로그인</Link></li>
                 </ul>
               </nav>
             </div>
