@@ -57,7 +57,7 @@ function Map({ latitude, longitude }: MapProps) {
         strategy='beforeInteractive' 
         src={ `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false&libraries=services`}
       />
-      <div className='flex'>
+      <div className='flex relative w-full'>
       <Mapside/>
        {/* <div className='' style={{aspectRatio: '320/220'}} id="map" /> */}
        <div className='' style={{width: "100vh", height: "100vh", right: "0px"}} id="map" />

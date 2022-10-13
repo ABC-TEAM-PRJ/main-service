@@ -43,6 +43,10 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.border_bottom_line {
+  border-bottom: inset;
+}
+
 a {
   color: inherit;
   text-decoration: none;
