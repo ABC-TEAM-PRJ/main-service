@@ -2,7 +2,7 @@ import HouseImage from '../public/houseImg.jpeg';
 
 const mapside = () => {
     return (
-      <div className="overflow-hidden relative border-r-1 border-gray-300 h-full w-[400px] flex-initial flex flex-col">
+      <div className="overflow-hidden relative border-r-1 border-gray-300 h-full w-[600px] flex-initial flex flex-col">
           {/* <div className="flex-none flex p-2 items-center border-b border-gray-200 lg:border-b-0 lg:hidden ">
               <MenuIcon className="w-10 lg:hidden hover:bg-gray-300 hover:rounded-lg focus:bg-gray-300 focus:rounded-lg"/>
           </div> */}

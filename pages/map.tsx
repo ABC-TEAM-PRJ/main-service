@@ -60,7 +60,7 @@ function Map({ latitude, longitude }: MapProps) {
       <div className='flex relative w-full'>
       <Mapside/>
        {/* <div className='' style={{aspectRatio: '320/220'}} id="map" /> */}
-       <div className='' style={{width: "100vh", height: "100vh", right: "0px"}} id="map" />
+       <div className='' style={{width: "100%", height: "100vh", right: "0px"}} id="map" />
       
      </div>
 
