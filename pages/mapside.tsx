@@ -1,8 +1,9 @@
-import HouseImage from '../public/houseImg.jpeg';
+import HouseImage from '../public/img/houseImg.jpeg';
+import Image from 'next/image'
 
 const mapside = () => {
     return (
-      <div className="overflow-hidden relative border-r-1 border-gray-300 h-full w-[600px] flex-initial flex flex-col">
+      <div className="overflow-hidden relative border-r-[1px] border-gray-300 h-full w-[600px] flex-initial flex flex-col">
           {/* <div className="flex-none flex p-2 items-center border-b border-gray-200 lg:border-b-0 lg:hidden ">
               <MenuIcon className="w-10 lg:hidden hover:bg-gray-300 hover:rounded-lg focus:bg-gray-300 focus:rounded-lg"/>
           </div> */}
@@ -25,8 +26,9 @@ const mapside = () => {
           <div className="w-full flex-col flex growcursor-pointer ">
             <div className="flex grow items-center w-full border_bottom_line p-[25px] bg-white h-[200]}">
                 <div className="bg-slate-600 border-black border-2">
-                    <img height={200} width={160} src='/img/houseImg.jpeg' />
-                
+                    {/* <img height={200} width={160} src='/img/houseImg.jpeg' /> */}
+                    {/* 아래 방식대로 사용해야 하는 이유: 위 방식을 사용할 경우 이미지 파일크기 약 41.3kb, 아래방식은 약 4.9kb 즉, 속도가 빨라진다. */}
+                    <Image src={HouseImage} alt="Picture" width={160} height={200} />
                 </div>
                 <div className="grow flex w-0 pl-5 ">
                     <div>
