@@ -1,8 +1,8 @@
 import '../styles/globals.css'
-import type { ReactElement, ReactNode } from 'react'
-import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import React from "react";
+import { SessionProvider } from "next-auth/react"
+import type { Session } from "next-auth"
 
 import {
   Hydrate,
@@ -10,30 +10,20 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
-
-export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page)
+export default function MyApp({ 
+  Component, 
+  pageProps: { session, ...pageProps } 
+}: AppProps<{ session: Session }>) {
   const [queryClient] = React.useState(() => new QueryClient())
 
-  return getLayout(
+  return (
+    <SessionProvider session={session}>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Component {...pageProps}/>
+          <Component {...pageProps} />
         </Hydrate>
       </QueryClientProvider>
-    )
+    </SessionProvider>
+  )
+
 }
-
-// function MyApp({ Component, pageProps }: AppProps) {
-//   return <Component {...pageProps} />
-// }
-
-// export default MyApp

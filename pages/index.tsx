@@ -1,11 +1,10 @@
 import type { NextPage } from 'next'
 import Layout from '../components/Layout'
 import React, { useState, useEffect } from "react";
-
 export default function Index() {
 
   return (
-    <>
+    <Layout>
       <main>
           <div className="container mx-auto max-w-7xl">
                 <div className="desktop:flex">
@@ -21,18 +20,10 @@ export default function Index() {
                 </div>
             </div>
         </main>
-    </>
+    </Layout>
       
     )
   }
-
-Index.getLayout = function getLayout(Page: NextPage) {
-  return (
-    <Layout>
-      {Page}
-    </Layout>
-  )
-}
 
 function Section () {
 

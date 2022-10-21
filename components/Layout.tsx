@@ -2,8 +2,11 @@ import Head from 'next/head'
 import Header from './common/Header'
 import Footer from './common/Footer'
 
+interface Props {
+    children: React.ReactNode
+}
 
-  export default function Layout({ children }:any) {
+  export default function Layout({ children }:Props) {
     return (
         <>         
             <Head>
