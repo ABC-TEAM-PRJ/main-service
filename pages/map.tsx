@@ -1,6 +1,6 @@
 import Script from 'next/script';
 import Header from '../components/common/Header'
-import Mapside from './mapside'
+import Mapside from '../components/map/mapside'
 import { useEffect } from "react";
 
 interface MapProps {
