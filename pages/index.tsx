@@ -12,7 +12,7 @@ export default function Index() {
                   
                     <div className="min-w-0 flex-auto px-4 tablet:px-6 desktop:px-8 pt-10 pb-24 laptop:pb-16">
                       
-                      <div className="grid grid-cols-1 tablet:grid-cols-3 gap-6 desktop:gap-8">
+                      <div className="grid grid-cols-1 laptop:grid-cols-3 gap-6 desktop:gap-8">
                         <Section key={1}/>
                         <Section key={2}/>
                         <Section key={3}/>
@@ -32,13 +32,13 @@ function Section () {
     <section className="flex">
       <div className="w-full relative text-black overflow-hidden rounded-2xl flex shadow-lg border border-gray-300 hover:drop-shadow-md">
         <div className="w-full flex laptop:flex-col">
-          <div className="sm:max-w-sm laptop:w-auto laptop:flex-auto flex flex-col items-start relative z-10 p-6 desktop:p-8">
+          <div className="laptop:w-auto laptop:flex-auto flex flex-col items-start relative z-10 p-6 desktop:p-8">
             <h2 className="text-xl font-semibold mb-2 text-shadow">Try it in the browser</h2>
             <p className="font-medium text-gray-400 text-shadow mb-4">Build something with Tailwind in our online playground.</p>
             <a href="https://play.tailwindcss.com/" className="mt-auto bg-gray-300 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex">{`return`}</a>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-300 hidden sm:block"></div>
+        {/* <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-300 hidden sm:block"></div> */}
       </div>
     </section>
   )
