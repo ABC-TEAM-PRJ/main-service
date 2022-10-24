@@ -11,12 +11,28 @@ const Post: NextPage = () => {
     const openPostCode = () => { setIsPopupOpen(true) }
     const closePostCode = () => { setIsPopupOpen(false) }
 
+    enum typeEnum{
+        oneRoom = "oneRoom",
+        twoRoom = "twoRoom",
+        threeRoom = "threeRoom",
+        office = "office",
+        apartment = "apartment",
+        etc = "etc"
+    }
+
+    enum typeDeal{
+        monthly = "monthly",    //월세
+        jeonse = "jeonse",    //전세 ( 영어로는 charter )
+        trading = "trading",    //매매
+    }
+
     type FormData = {
         name: string;       //아파트 이름
         address1: string;   //주소1
         address2: string;   //주소2
         price: string;      //가격
-        itemType: string;   //타입
+        itemType: typeEnum;   //타입
+        dealInfo: typeDeal;   //거래정보 ( db에 없어서 추가해야함 )
         contents: string;   //상세설명
         xloc: string;   //위도
         yloc: string;   //경도
@@ -28,7 +44,6 @@ const Post: NextPage = () => {
     return (
         <>
         <Header/>
-            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="m-auto w-[829px]">
                     <div className="mt-[62px] font-semibold text-[24px]">매물등록</div>
 
@@ -114,9 +129,8 @@ const Post: NextPage = () => {
                     <div className="">사진등록<span>*</span></div>
                     <div>등록하기<input type="file" className=""/></div>
 
-                    <button type="button">저장</button>
+                    <button onClick={handleSubmit(onSubmit)}>저장하기</button>
                 </div>
-            </form>
         </>
     )
 }
