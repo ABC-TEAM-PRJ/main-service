@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Layout from '../components/Layout'
+import Layout from '../components/common/Layout'
 
 export default function About() {
     return (
