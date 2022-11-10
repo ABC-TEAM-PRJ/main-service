@@ -1,11 +1,11 @@
 import Layout from "../components/common/Layout";
 import {useState, useEffect} from 'react';
 import getUserList from "./api/user/userList";
-
+import {User} from "../interfaces/user"
 
 export default function Users() {
 
-  const [userList, setUserList] = useState(null);
+  const [userList, setUserList] = useState<User[]>([]);
   
   useEffect(() => {
     fetchData();
