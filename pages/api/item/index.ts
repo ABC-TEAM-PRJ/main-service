@@ -5,7 +5,7 @@ const local = 'http://localhost:8000/graphql'
 const insertItemQuery = (item:FormData) => `
     mutation {
       addItems(
-        userNo:'',
+        userNo:'7',
         name:${item.name},
         addr1:${item.address1},
         addr2:${item.address2},
@@ -76,6 +76,9 @@ let insertItem = async (item:FormData) => {
             body: insertItemQuery(item)
         }
     )
+
+    console.log(res,"res!!!!!!")
+
     return res.json();
 }
 
@@ -115,4 +118,4 @@ let getItem = async () => {
     return res.json();
 }
 
-export default { insertItem, updateItem, delItem, getItem }
+export { insertItem, updateItem, delItem, getItem }

@@ -5,6 +5,7 @@ import DaumPostcode from "react-daum-postcode";
 import Header from "../components/common/Header";
 import {SubmitHandler, useForm} from 'react-hook-form'
 import {FormData} from '../interfaces/item'
+import {insertItem} from  './api/item/index'
 
 const Post: NextPage = () => {
 
@@ -13,7 +14,10 @@ const Post: NextPage = () => {
     const closePostCode = () => { setIsPopupOpen(false) }
 
     const { register, setValue, handleSubmit, formState: { errors } } = useForm<FormData>();
-    const onSubmit: SubmitHandler<FormData> = data => console.log(data);
+    const onSubmit: SubmitHandler<FormData> = async data => {
+        let rs = await insertItem(data)
+        console.log(rs,"22222222")
+    }
 
     return (
         <>
