@@ -11,7 +11,7 @@ import React, {useEffect, useState} from 'react'
  * 함수 컴포넌트에서 React state와 생명주기 기능(lifecycle features)을 연동, 연결 (hook into) 해주는 함수
  * */
 
-const debounce = () => {
+const Debounce = () => {
     /**
      * useState
      * value1의 변수를 setValue1을 통해서 관리하겠다 (상태값 관리)
@@ -78,4 +78,4 @@ const debounce = () => {
     );
 }
 
-export default debounce()
+export default Debounce()

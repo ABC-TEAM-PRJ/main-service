@@ -6,7 +6,7 @@ import React, {useEffect, useState} from 'react'
  * ex)스크롤이벤트
  * */
 
-const throttle = () => {
+const Throttle = () => {
     const [page, setPage] = useState(10);
     const [books, setBook] = useState([]);
     const [throttle, setThrottle] = useState(false);
@@ -46,4 +46,4 @@ const throttle = () => {
     )
 }
 
-export default throttle()
+export default Throttle()

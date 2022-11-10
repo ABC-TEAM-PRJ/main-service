@@ -11,7 +11,7 @@ import { usePosts } from '../hooks/usePost'
  *
  * */
 
-const tanstack = () => {
+const Tanstack = () => {
     /**
      * useQuery(고유 키, 함수)
      * 고유키: refetching, caching, sharing 때 사용
@@ -84,4 +84,4 @@ const tanstack = () => {
     )
 }
 
-export default tanstack
+export default Tanstack
