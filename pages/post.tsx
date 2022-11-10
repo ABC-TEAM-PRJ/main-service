@@ -4,39 +4,13 @@ import Modal from '../components/common/Modal'
 import DaumPostcode from "react-daum-postcode";
 import Header from "../components/common/Header";
 import {SubmitHandler, useForm} from 'react-hook-form'
+import {FormData} from '../interfaces/item'
 
 const Post: NextPage = () => {
 
     const [isPopupOpen, setIsPopupOpen] = useState(false)
     const openPostCode = () => { setIsPopupOpen(true) }
     const closePostCode = () => { setIsPopupOpen(false) }
-
-    enum typeEnum{
-        oneRoom = "oneRoom",
-        twoRoom = "twoRoom",
-        threeRoom = "threeRoom",
-        office = "office",
-        apartment = "apartment",
-        etc = "etc"
-    }
-
-    enum typeDeal{
-        monthly = "monthly",    //월세
-        jeonse = "jeonse",    //전세 ( 영어로는 charter )
-        trading = "trading",    //매매
-    }
-
-    type FormData = {
-        name: string;       //아파트 이름
-        address1: string;   //주소1
-        address2: string;   //주소2
-        price: string;      //가격
-        itemType: typeEnum;   //타입
-        dealInfo: typeDeal;   //거래정보 ( db에 없어서 추가해야함 )
-        contents: string;   //상세설명
-        xloc: string;   //위도
-        yloc: string;   //경도
-    };
 
     const { register, setValue, handleSubmit, formState: { errors } } = useForm<FormData>();
     const onSubmit: SubmitHandler<FormData> = data => console.log(data);
