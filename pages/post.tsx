@@ -5,7 +5,7 @@ import DaumPostcode from "react-daum-postcode";
 import Header from "../components/common/Header";
 import {SubmitHandler, useForm} from 'react-hook-form'
 import {FormData} from '../interfaces/item'
-import {insertItem} from  './api/item/index'
+import {getItem, insertItem} from  './api/item/index'
 
 const Post: NextPage = () => {
 
@@ -16,7 +16,12 @@ const Post: NextPage = () => {
     const { register, setValue, handleSubmit, formState: { errors } } = useForm<FormData>();
     const onSubmit: SubmitHandler<FormData> = async data => {
         let rs = await insertItem(data)
-        console.log(rs,"22222222")
+        // let rs = await getItem()
+        if(rs.data.addItems){
+            console.log("데이터 삽입 성공")
+        }else{
+            console.log("데이터 삽입 실패")
+        }
     }
 
     return (
@@ -88,7 +93,7 @@ const Post: NextPage = () => {
                     <div className="mt-[29px] text-[14px]">위치정보</div>
                     <div className="flex mt-[9px] ">
                         <input className="w-[277px] h-[35px] border-solid border-1 border-[#B5B5B5] rounded-l-[5px] focus:outline-none"
-                               {...register("address1")}/>
+                               {...register("addr1")}/>
                         <button className="w-[80px] h-[35px] bg-[#B5B5B5] rounded-r-[5px] border-transparent p-[10px] text-[#FFF]" type='button' onClick={openPostCode}>검색</button>
                     </div>
                     <div id='add-modal'>
