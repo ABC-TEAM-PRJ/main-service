@@ -4,7 +4,7 @@ import HouseImage2 from '../../public/img/houseImg2.jpeg';
 import HouseImage3 from '../../public/img/houseImg3.jpeg';
 
 
-const mapArr = 
+const MapArr = 
         <div className="w-full flex-col flex growcursor-pointer">
             <div className="flex grow items-center w-full border_bottom_line p-[25px] bg-white h-[200]}">
                 <div className="bg-slate-600 border-black border-2">
@@ -44,7 +44,7 @@ const mapArr =
             </div>
         </div>
 
-      const mapArr2 =  
+      const MapArr2 =  
       <div className="w-full flex-col flex growcursor-pointer ">
         <div className="flex grow items-center w-full border_bottom_line p-[25px] bg-white h-[200]}">
             <div className="bg-slate-600 border-black border-2">
@@ -86,4 +86,4 @@ const mapArr =
         </div>
     </div>
 
-export {mapArr,mapArr2}
+export {MapArr,MapArr2}

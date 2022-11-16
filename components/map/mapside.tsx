@@ -1,16 +1,16 @@
-import {mapArr, mapArr2} from './mapArrData';
+import {MapArr, MapArr2} from './MapArrData';
 import { Tabs } from "flowbite-react";
 
 
-const mapside = () => {
+const Mapside = () => {
     const mapDataArr = [{
         id: 1,
-        content: mapArr
+        content: MapArr
     }]
 
     const mapDataArr2 = [{
         id: 2,
-        content: mapArr2
+        content: MapArr2
     }]
 
     return (
@@ -54,4 +54,4 @@ const mapside = () => {
     )
 }
 
-export default mapside
+export default Mapside

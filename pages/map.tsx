@@ -1,6 +1,6 @@
 import Script from 'next/script';
 import Header from '../components/common/Header'
-import Mapside from '../components/map/mapside'
+import Mapside from '../components/map/MapSide'
 import { FC, useEffect } from "react";
 
 
