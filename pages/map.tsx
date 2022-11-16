@@ -1,12 +1,8 @@
 import Script from 'next/script';
 import Header from '../components/common/Header'
-import Mapside from '../components/map/mapside'
+import Mapside from '../components/map/MapSide'
 import { FC, useEffect } from "react";
 
-interface MapProps {
-  latitude: number;
-  longitude: number;
-}
 
 declare global {
     interface Window {
@@ -34,7 +30,7 @@ const Map: FC<{address: string}> = ({ address }) => {
         const geocoder = new window.kakao.maps.services.Geocoder(); // 주소-좌표 변환 객체를 생성
 
         // 주소로 좌표를 검색
-        geocoder.addressSearch('서울시 금천구 가산디지털1로 145', function (result: any, status: any) {
+        geocoder.addressSearch('부산시', function (result: any, status: any) {
           if(status === window.kakao.maps.services.Status.OK){
             var coords = new window.kakao.maps.LatLng(result[0].y, result[0].x)
             //지도생성
@@ -103,7 +99,6 @@ const Map: FC<{address: string}> = ({ address }) => {
     
     <>          
     <Header/>
-    {/* <Mapside/> */}
     <Script 
         strategy='beforeInteractive' 
         src={ `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false&libraries=services`}
