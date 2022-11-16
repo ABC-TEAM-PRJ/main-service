@@ -1,6 +1,6 @@
 import {FormData} from '../../../interfaces/item'
 
-const local = 'http://localhost:8000/graphql'
+const local = '/api/graphql'
 
 const insertItemQuery = (item:FormData) => `
     mutation {
@@ -73,7 +73,20 @@ let insertItem = async (item:FormData) => {
         {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: insertItemQuery(item)
+            body: JSON.stringify({query:`mutation {
+                addItems(
+                  userNo:6,
+                  name:"매물테스트데이터",
+                  addr1:"주소1",
+                  addr2:"주소2",
+                  price:5000,
+                  itemType:"아파트",
+                  contents:"테스트 매물이지요",
+                  xloc:"37.5126090000",
+                  yloc:"127.1027670000",
+                  useYn:"Y"
+                )
+              }`})
         }
     )
 

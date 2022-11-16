@@ -24,7 +24,7 @@ export default function Event() {
   }
 
   async function UserBoxByEmail(){
-    const endpoint = 'http://localhost:8000/graphql'
+    const endpoint = '/api/graphql'
     const query = JSON.stringify({query:`query{
         items{
           itemNo
